@@ -1,0 +1,46 @@
+﻿@model Portal.Models.AddPatientViewModel
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Patient Form</title>
+    <link rel="stylesheet" href="~/css/styles.css" />
+    <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.css" />
+</head>
+<body>
+    <div class="jumbotron dark-blue-background">
+        <h1 class="display-3">Patient Form</h1>
+        <p class="lead">Fill in the new patients details.</p>
+    </div>
+
+    <div class="container">
+        <form asp-action="PatientForm" method="post">
+            <div class="text-center font-weight-bold lead" asp-validation-summary="All"></div>
+            <div class="form-group">
+                <label asp-for="Name" class="px-2">Name:</label>
+                <input asp-for="Name" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Age" class="px-2">Patient's date of birth:</label>
+                <input asp-for="Age" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Description" class="px-2">Description:</label>
+                <input asp-for="Description" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="RegistrationDate" class="px-2">Date of registration:</label>
+                <input asp-for="RegistrationDate" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="TreatmentPlan" class="px-2">Treatment plan:</label>
+                <input asp-for="TreatmentPlan" class="form-control" />
+            </div>
+            <button type="submit" class="mb-5 btn btn-primary">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

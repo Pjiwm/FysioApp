@@ -1,0 +1,50 @@
+﻿.field-validation-error {
+    color: #626580;
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+.input-validation-error {
+    border: 1px solid #f00;
+    background-color: #626580;
+}
+
+.validation-summary-errors {
+    font-weight: bold;
+    color: #626580;
+}
+
+.validation-summary-valid {
+    display: none;
+}
+
+.btn-primary {
+    background-color: #9ca5ff !important;
+    border-color: #9ca5ff !important;
+}
+
+    .btn-primary:hover {
+        background-color: #525aaf !important;
+        border-color: #525aaf !important;
+    }
+
+.dark-blue-background {
+    background-color: #525aaf !important;
+    color: #ffffff;
+}
+
+.light-blue-background {
+    background-color: #9ca5ff !important;
+    color: #ffffff;
+}
+
+.grey-blue-background {
+    background-color: #626580 !important;
+    color: #ffffff;
+}
+
+ul, ol {
+    list-style: none;
+}
