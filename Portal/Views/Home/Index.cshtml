@@ -19,24 +19,24 @@
         <a class="btn btn-primary" asp-action="PatientForm">Add a new patient</a>
     </div>
 
-        <div class="text-center container">
-            <h2>Registered Patients</h2>
-            <table class="table table-bordered table-striped table-sm px-4">
-                <thead>
-                    <tr><th>Name</th><th>Age</th><th>Registration date</th></tr>
-                </thead>
+    <div class="text-center container">
+        <h2>Registered Patients</h2>
+        <table class="table table-bordered table-striped table-sm px-4">
+            <thead>
+                <tr><th>Name</th><th>Age</th><th>Registration date</th></tr>
+            </thead>
 
-                <tbody>
-                    @foreach (PatientViewModel p in Model)
-                    {
-                        <tr>
-                            <td>@p.Name</td>
-                            <td>@p.Age</td>
-                            <td>@p.RegistrationDate</td>
-                        </tr>
-                    }
-                </tbody>
-            </table>
-        </div>
+            <tbody>
+                @foreach (PatientViewModel p in Model)
+                {
+                    <tr>
+                        <td>@p.Name</td>
+                        <td>@p.Age</td>
+                        <td>@p.RegistrationDate</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
 </body>
 </html>
