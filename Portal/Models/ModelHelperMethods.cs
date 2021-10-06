@@ -13,7 +13,11 @@ namespace Portal.Models
             return new Patient
             {
                 Name = patient.Name,
-                EMail = patient.EMail
+                EMail = patient.EMail,
+                DateOfBirth = patient.DateOfBirth,
+                PatientID = patient.PatientID,
+                Gender = patient.Gender,
+                PhoneNumber = patient.PhoneNumber
             };
         }
 
@@ -32,10 +36,11 @@ namespace Portal.Models
             return new PatientViewModel
             {
                 Name = patient.Name,
-                Age = patient.Age,
-                Description = patient.Description,
-                RegistrationDate = patient.RegistrationDate,
-                TreatmentPlan = patient.TreatmentPlan
+                EMail = patient.EMail,
+                DateOfBirth = patient.DateOfBirth,
+                PatientID = patient.PatientID,
+                Gender = patient.Gender,
+                PhoneNumber = patient.PhoneNumber
             };
         }
     }

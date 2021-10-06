@@ -23,7 +23,7 @@
         <h2>Registered Patients</h2>
         <table class="table table-bordered table-striped table-sm px-4">
             <thead>
-                <tr><th>Name</th><th>Age</th><th>Registration date</th></tr>
+                <tr><th>Name</th><th>ID</th><th>Date of birth</th></tr>
             </thead>
 
             <tbody>
@@ -31,7 +31,8 @@
                 {
                     <tr>
                         <td>@p.Name</td>
-                        <td>@p.StudentId</td>
+                        <td>@p.PatientID</td>
+                        <td>@p.DateOfBirth.ToString("dd/mm/yyyy")</td>
                     </tr>
                 }
             </tbody>

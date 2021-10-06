@@ -17,7 +17,10 @@ namespace Tests
             {
                 Name = "Joe Nuts",
                 EMail = "Test@joe.nl",
-                PatientId = 0
+                PatientID = 0,
+                DateOfBirth = System.DateTime.Now,
+                Gender = Gender.Male,
+                PhoneNumber = "0612345678"
             };
             var sut = patientMock.Object;
 

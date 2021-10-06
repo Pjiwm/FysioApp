@@ -5,31 +5,19 @@ namespace Domain
 {
     public class Patient
     {
+
+        [Key]
+        [Required]
+        public int PatientID { get; set; }
         [Required]
         public string Name { get; set; }
         [Required]
         public string EMail { get; set; }
+        [Required]
+        public DateTime DateOfBirth { get; set; }
+        [Required]
+        public Gender Gender { get; set; }
+        public string PhoneNumber { get; set; }
 
-        [Key]
-        public int PatientID { get; set; }
-
-        //public DateTime Age { get; set; }
-
-        //public string Description { get; set; }
-
-        //// diagnose code
-        //// medewerker of student
-        //// intake gedaan door
-        //// optioneel: intake onder supervisie van
-        //// hoofdbehandelaar
-
-        //public DateTime RegistrationDate { get; set; }
-
-        //// optioneel: datum ontslag behandeling
-        //// opmerkingen
-
-        //public string TreatmentPlan { get; set; }
-
-        //// behandelingen
     }
 }
