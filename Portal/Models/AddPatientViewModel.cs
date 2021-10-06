@@ -1,4 +1,5 @@
 ﻿using Domain;
+using Portal.Attributes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -19,6 +20,7 @@ namespace Portal.Models
         public int PatientID { get; set; }
 
         [Required(ErrorMessage = "Please enter your date of birth.")]
+        [Age(16, ErrorMessage = "Patient must be 16 years or older.")]
         [DataType(DataType.Date)]
         public DateTime DateOfBirth { get; set; }
 
