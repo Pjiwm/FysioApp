@@ -28,6 +28,8 @@ namespace Portal.Models
         public Gender Gender { get; set; }
         [Phone]
         public string PhoneNumber { get; set; }
+        [Required]
+        public PatientRole Role { get; set; }
 
     }
 }

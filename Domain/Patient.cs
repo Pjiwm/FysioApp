@@ -17,7 +17,10 @@ namespace Domain
         public DateTime DateOfBirth { get; set; }
         [Required]
         public Gender Gender { get; set; }
+        [Required]
         public string PhoneNumber { get; set; }
+        [Required]
+        public PatientRole Role { get; set; }
 
     }
 }
