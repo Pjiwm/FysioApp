@@ -13,10 +13,7 @@ namespace Portal.Models
             return new Patient
             {
                 Name = patient.Name,
-                Age = patient.Age,
-                Description = patient.Description,
-                RegistrationDate = patient.RegistrationDate,
-                TreatmentPlan = patient.TreatmentPlan
+                EMail = patient.EMail
             };
         }
 

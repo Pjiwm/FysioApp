@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using Xunit;
 namespace Tests
 {
-    public class UnitTest1
+    public class CanAddPatientToRepository
     {
         [Fact]
         public void Can_Add_Patient_To_Patient_Repository()
@@ -15,11 +15,9 @@ namespace Tests
             patientMock.Setup(s => s.Patients).Returns(new List<Patient>());
             var patientViewModel = new AddPatientViewModel()
             {
-                TreatmentPlan = "Medicine",
-                Age = new System.DateTime(1999, 10, 20),
-                Description = "Test patient",
-                RegistrationDate = System.DateTime.Now,
-                Name = "Joe Nuts"
+                Name = "Joe Nuts",
+                EMail = "Test@joe.nl",
+                PatientId = 0
             };
             var sut = patientMock.Object;
 
