@@ -17,7 +17,8 @@ namespace Portal.Models
                 DateOfBirth = patient.DateOfBirth,
                 PatientID = patient.PatientID,
                 Gender = patient.Gender,
-                PhoneNumber = patient.PhoneNumber
+                PhoneNumber = patient.PhoneNumber,
+                Role = patient.Role
             };
         }
 
@@ -40,7 +41,8 @@ namespace Portal.Models
                 DateOfBirth = patient.DateOfBirth,
                 PatientID = patient.PatientID,
                 Gender = patient.Gender,
-                PhoneNumber = patient.PhoneNumber
+                PhoneNumber = patient.PhoneNumber,
+                Role = patient.Role
             };
         }
     }

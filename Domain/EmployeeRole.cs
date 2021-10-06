@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Domain
 {
-    class EmployeeRole
+    public enum EmployeeRole
     {
+        Therapist, Student
     }
 }
