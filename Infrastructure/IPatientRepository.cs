@@ -9,10 +9,10 @@ namespace Infrastructure
         // CRUD
         public void Add(Patient patient);
         public Patient ReadByID(int id);
-        public void Update(Patient patient);
+        // updating existing patient doesn't seem to be mandatory for assignment.
+        //public void Update(Patient patient);
         public void Delete(Patient patient);
         public int Count();
-
 
     }
 }

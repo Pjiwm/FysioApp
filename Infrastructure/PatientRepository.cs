@@ -8,6 +8,27 @@ using System.Threading.Tasks;
 namespace Infrastructure
 {
     public class PatientRepository : IPatientRepository {
-        public List<Patient> Patients { get; set; } = new List<Patient>();
+        private List<Patient> Patients { get; set; }
+
+        public void Add(Patient patient)
+        {
+            Patients.Add(patient);
+        }
+
+        public int Count()
+        {
+            return Patients.Count;
+        }
+
+        public void Delete(Patient patient)
+        {
+            Patients.Remove(patient);
+        }
+
+        public Patient ReadByID(int id)
+        {
+            return Patients[id];
+        }
+
     }
 }
