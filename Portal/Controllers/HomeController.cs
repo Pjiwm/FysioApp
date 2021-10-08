@@ -23,7 +23,7 @@ namespace Portal.Controllers
 
         public IActionResult Index()
         {
-            return View(_patientRepository.Patients.ToViewModel());
+            return View(_patientRepository.GetPatients().ToViewModel());
         }
 
         public IActionResult Privacy()
@@ -43,7 +43,7 @@ namespace Portal.Controllers
         {
             if (ModelState.IsValid)
             {
-                _patientRepository.Patients.Add(patient.ToDomain());
+                _patientRepository.Add(patient.ToDomain());
                 return RedirectToAction("Index");
             }
             return View(patient);

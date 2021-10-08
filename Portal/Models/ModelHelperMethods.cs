@@ -22,7 +22,7 @@ namespace Portal.Models
             };
         }
 
-        public static List<PatientViewModel> ToViewModel(this List<Patient> patients)
+        public static List<PatientViewModel> ToViewModel(this IEnumerable<Patient> patients)
         {
             List<PatientViewModel> patientsViewModel = new List<PatientViewModel>();
             foreach (Patient patient in patients)
