@@ -6,6 +6,13 @@ namespace Infrastructure
 {
     public interface IPatientRepository
     {
-        public List<Patient> Patients { get; set; }
+        // CRUD
+        public void Add(Patient patient);
+        public Patient ReadByID(int id);
+        public void Update(Patient patient);
+        public void Delete(Patient patient);
+        public int Count();
+
+
     }
 }
