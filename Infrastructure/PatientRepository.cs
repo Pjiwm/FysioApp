@@ -10,6 +10,10 @@ namespace Infrastructure
     public class PatientRepository : IPatientRepository {
         private List<Patient> Patients { get; set; }
 
+        public PatientRepository()
+        {
+            Patients = PatientSeeder.Seed(20);
+        }
         public void Add(Patient patient)
         {
             Patients.Add(patient);
@@ -30,5 +34,9 @@ namespace Infrastructure
             return Patients[id];
         }
 
+        public IEnumerable<Patient> GetPatients()
+        {
+            return Patients;
+        }
     }
 }

@@ -13,6 +13,6 @@ namespace Infrastructure
         //public void Update(Patient patient);
         public void Delete(Patient patient);
         public int Count();
-
+        IEnumerable<Patient> GetPatients();
     }
 }
