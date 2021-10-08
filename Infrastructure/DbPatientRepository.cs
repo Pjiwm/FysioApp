@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Infrastructure
 {
-    class DbPatientRepository : IPatientRepository
+    public class DbPatientRepository : IPatientRepository
     {
 
         private FysioDbContext _context { get; set; }

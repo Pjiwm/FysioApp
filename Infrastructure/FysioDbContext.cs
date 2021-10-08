@@ -8,12 +8,13 @@ using System.Threading.Tasks;
 
 namespace Infrastructure
 {
-    class FysioDbContext : DbContext
+    public class FysioDbContext : DbContext
     {
         public DbSet<Patient> Patients { get; set; }
         public FysioDbContext(DbContextOptions<FysioDbContext> contextOptions) : base(contextOptions)
         {
 
+            
         }
     }
 }
