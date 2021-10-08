@@ -1,5 +1,3 @@
-using dotenv.net.Utilities;
-using dotenv.net;
 using Infrastructure;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -28,10 +26,9 @@ namespace Portal
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddScoped<IPatientRepository, DbPatientRepository>();
-            //DotEnv.Load();
-            //var values = DotEnv.Read();
-            //Console.WriteLine(values["CON_STRING"]);
+
             services.AddDbContext<FysioDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("default")));
+
             //services.AddSingleton<IPatientRepository, PatientRepository>();
 
             services.AddControllersWithViews();
