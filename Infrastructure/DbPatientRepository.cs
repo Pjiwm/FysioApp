@@ -42,5 +42,10 @@ namespace Infrastructure
         {
             return _context.Patients.Find(id);
         }
+
+        public IQueryable<Patient> ReadAll()
+        {
+            return _context.Patients;
+        }
     }
 }

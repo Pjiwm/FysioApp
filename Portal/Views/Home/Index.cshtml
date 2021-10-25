@@ -1,9 +1,4 @@
-﻿@model List<PatientViewModel>
-@{
-    Layout = null;
-}
-
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
@@ -20,23 +15,9 @@
     </div>
 
     <div class="text-center container">
-        <h2>Registered Patients</h2>
-        <table class="table table-bordered table-striped table-sm px-4">
-            <thead>
-                <tr><th>Name</th><th>ID</th><th>Date of birth</th></tr>
-            </thead>
-
-            <tbody>
-                @foreach (PatientViewModel p in Model)
-                {
-                    <tr>
-                        <td>@p.Name</td>
-                        <td>@p.PatientID</td>
-                        <td>@p.DateOfBirth.ToString("dd/mm/yyyy")</td>
-                    </tr>
-                }
-            </tbody>
-        </table>
+        <h1>LOL</h1>
+        <a class="btn btn-primary m-2" asp-controller="Auth" asp-action="Login">Login</a>
+        <a class="btn btn-primary m-2" asp-controller="Auth" asp-action="Register">Registreren</a>
     </div>
 </body>
 </html>

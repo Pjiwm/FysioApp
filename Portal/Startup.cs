@@ -1,7 +1,10 @@
 using Infrastructure;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -9,6 +12,7 @@ using Microsoft.Extensions.Hosting;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 
 namespace Portal
@@ -27,9 +31,50 @@ namespace Portal
         {
             services.AddScoped<IPatientRepository, DbPatientRepository>();
 
-            services.AddDbContext<FysioDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("default")));
+            services.AddScoped<UserManager<IdentityUser>>();
+            services.AddScoped<SignInManager<IdentityUser>>();
+            services.AddScoped<RoleManager<IdentityRole>>();
 
+            services.AddDbContext<FysioDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("default")));
+            services.AddDbContext<IdentityContext>(options => options.UseSqlServer(Configuration.GetConnectionString("default")));
             //services.AddSingleton<IPatientRepository, PatientRepository>();
+
+            services.AddIdentity<IdentityUser, IdentityRole>(options =>
+            {
+                options.User.AllowedUserNameCharacters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZëË0123456789 ";
+            })
+                .AddRoles<IdentityRole>()
+                .AddEntityFrameworkStores<IdentityContext>();
+
+            services.ConfigureApplicationCookie(options =>
+            {
+                options.AccessDeniedPath = new PathString("/Auth/AccessDenied");
+                options.Cookie.Name = "Cookie";
+                options.Cookie.HttpOnly = true;
+                options.ExpireTimeSpan = TimeSpan.FromMinutes(720);
+                options.LoginPath = new PathString("/Auth/Login");
+                options.ReturnUrlParameter = CookieAuthenticationDefaults.ReturnUrlParameter;
+                options.SlidingExpiration = true;
+            });
+
+            services.Configure<IdentityOptions>(opts =>
+            {
+                opts.Password.RequiredLength = 8;
+                opts.Password.RequireNonAlphanumeric = false;
+                opts.Password.RequireLowercase = false;
+                opts.Password.RequireUppercase = false;
+                opts.Password.RequireDigit = true;
+            });
+            services.AddAuthorization(options =>
+            {
+                options.AddPolicy("RequirePhysicalTherapist",
+                    policy => policy.RequireClaim("PhysicalTherapist"));
+                options.AddPolicy("RequireEmployee", policy => policy.RequireClaim(ClaimTypes.Authentication, "Employee"));
+                options.AddPolicy("RequireTherapist", policy => policy.RequireClaim(ClaimTypes.Authentication, "Therapist"));
+                options.AddPolicy("RequirePatient", policy => policy.RequireClaim(ClaimTypes.Authentication, "Patient"));
+            });
+
+
 
             services.AddControllersWithViews();
         }
@@ -53,6 +98,7 @@ namespace Portal
             app.UseRouting();
 
             app.UseAuthorization();
+            app.UseAuthentication();
 
             app.UseEndpoints(endpoints =>
             {

@@ -38,5 +38,10 @@ namespace Infrastructure
         {
             return Patients;
         }
+
+        public IQueryable<Patient> ReadAll()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

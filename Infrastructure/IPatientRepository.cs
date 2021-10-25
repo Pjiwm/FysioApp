@@ -1,6 +1,7 @@
 ﻿using Domain;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Infrastructure
 {
@@ -14,5 +15,6 @@ namespace Infrastructure
         public void Delete(Patient patient);
         public int Count();
         IEnumerable<Patient> GetPatients();
+        public IQueryable<Patient> ReadAll();
     }
 }
