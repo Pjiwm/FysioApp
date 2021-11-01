@@ -1,4 +1,7 @@
-﻿<!DOCTYPE html>
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
@@ -7,17 +10,24 @@
     <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.css" />
 </head>
 <body>
-    <div class="text-center">
-        <div class="display-1 py-2">
-            Registrated Patients
-        </div>
-        <a class="btn btn-primary" asp-action="PatientForm">Add a new patient</a>
+
+    <div class="jumbotron dark-blue-background">
+        <h1 class="display-3">Welkom!</h1>
+        <p>Welkom bij de avans fysio applicatie!</p>
+        <p>Om verder te gaan dient u in te loggen door op de login knop te drukken,</p>
+        <p>of een account aan te maken door op de registreer knop te drukken</p>
     </div>
 
-    <div class="text-center container">
-        <h1>LOL</h1>
-        <a class="btn btn-primary m-2" asp-controller="Auth" asp-action="Login">Login</a>
-        <a class="btn btn-primary m-2" asp-controller="Auth" asp-action="Register">Registreren</a>
+
+    <div class="text-center container pb-5">
+        <img src="~/img/banner1.png" alt="Banner" class="pb-5"/>
+        <div class="container grey-blue-background">
+            <h2>Inloggen of een nieuw account aanmaken:</h2>
+            <div class="pb-3">
+                <a class="btn btn-primary m-2" asp-controller="Auth" asp-action="Login">Login</a>
+                <a class="btn btn-primary m-2" asp-controller="Auth" asp-action="Register">Registreren</a>
+            </div>
+        </div>
     </div>
 </body>
 </html>

@@ -20,14 +20,24 @@
     display: none;
 }
 
+.arial {
+    font-family: Arial
+}
+
+.impact {
+    font-family: Impact
+}
+
 .btn-primary {
-    background-color: #9ca5ff !important;
-    border-color: #9ca5ff !important;
+    background-color: #525aaf !important;
+    border-color: #525aaf !important;
+    font-family: Impact
 }
 
     .btn-primary:hover {
-        background-color: #525aaf !important;
-        border-color: #525aaf !important;
+        background-color: #9ca5ff !important;
+        border-color: #9ca5ff !important;
+        font-family: Impact;
     }
 
 .dark-blue-background {
