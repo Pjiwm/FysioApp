@@ -1,5 +1,7 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using Infrastructure;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Portal.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +11,8 @@ namespace Portal.Controllers
 {
     public class PatientController : Controller
     {
-        [Authorize(Policy = "RequirePatient")]
+
+        //[Authorize(Policy = "RequirePatient")]
         public IActionResult Index()
         {
             return View();

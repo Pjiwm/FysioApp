@@ -24,6 +24,12 @@ namespace Portal.Controllers
             return View();
         }
 
+        [HttpGet]
+        public IActionResult PatientForm()
+        {
+            return View();
+        }
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult PatientForm(AddPatientViewModel patient)
@@ -31,9 +37,14 @@ namespace Portal.Controllers
             if (ModelState.IsValid)
             {
                 patientRepository.Add(patient.ToDomain());
-                return RedirectToAction("Index");
+                return Redirect("/Patient");
             }
             return View(patient);
+        }
+
+        public IActionResult ShowPatients()
+        {
+            return View(patientRepository.GetPatients().ToViewModel());
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

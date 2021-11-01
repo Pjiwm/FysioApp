@@ -21,10 +21,22 @@
 
     <div class="text-center container">
         <h2>Registered Patients</h2>
-        <a class="btn btn-primary m-2" asp-controller="NewPatient" asp-action="PatientForm">Voeg Patiënt toe</a>
-        <a class="btn btn-primary m-2" asp-controller="NewPatient" asp-action="ShowPatients">Toon Patiënten</a>
+        <table class="table table-bordered table-striped table-sm px-4">
+            <thead>
+                <tr><th>Name</th><th>ID</th><th>Date of birth</th></tr>
+            </thead>
 
-
+            <tbody>
+                @foreach (PatientViewModel p in Model)
+                {
+                    <tr>
+                        <td>@p.Name</td>
+                        <td>@p.PatientID</td>
+                        <td>@p.DateOfBirth.ToShortDateString()</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
     </div>
 </body>
 </html>

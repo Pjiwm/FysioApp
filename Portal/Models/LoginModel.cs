@@ -15,7 +15,7 @@ namespace Portal.Models
         [UIHint("password")]
         public string Password { get; set; }
 
-        public string ReturnUrl { get; set; } = "/";
+        public string ReturnUrl { get; set; } = "/Patient";
     }
 }
 
