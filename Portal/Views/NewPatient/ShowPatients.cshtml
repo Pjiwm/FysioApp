@@ -7,23 +7,21 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>Avans Fysio</title>
+    <title>Patient list</title>
     <link rel="stylesheet" href="~/css/styles.css" />
     <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.css" />
 </head>
 <body>
     <div class="text-center">
-        <div class="display-1 py-2">
-            Registrated Patients
-        </div>
-        <a class="btn btn-primary" asp-action="PatientForm">Add a new patient</a>
+        <a class="btn btn-primary" asp-controller="Patient" asp-action="Index">Terug</a>
+        <a class="btn btn-primary" asp-action="PatientForm">Voeg patiënt toe</a>
     </div>
 
     <div class="text-center container">
-        <h2>Registered Patients</h2>
+        <h4 class="arial">Registratie lijst</h4>
         <table class="table table-bordered table-striped table-sm px-4">
             <thead>
-                <tr><th>Name</th><th>ID</th><th>Date of birth</th></tr>
+                <tr><th>Naam</th><th>ID</th><th>Geboortedatum</th></tr>
             </thead>
 
             <tbody>
