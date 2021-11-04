@@ -27,6 +27,7 @@ namespace Portal.Models
         [Required]
         public Gender Gender { get; set; }
         [Phone]
+        [Required]
         public string PhoneNumber { get; set; }
         [Required]
         public PatientRole Role { get; set; }

@@ -6,9 +6,9 @@
     display: none;
 }
 
-.input-validation-error {
+.form-control.input-validation-error {
     border: 1px solid #f00;
-    background-color: #626580;
+    background-color: #FEE;
 }
 
 .validation-summary-errors {

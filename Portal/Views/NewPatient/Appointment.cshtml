@@ -1,0 +1,42 @@
+﻿@model Portal.Models.AddAppointmentViewModel
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Patient Appointment</title>
+    <link rel="stylesheet" href="~/css/styles.css" />
+    <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.css" />
+</head>
+<body>
+    <div class="jumbotron dark-blue-background">
+        <h1 class="display-3">Afspraak</h1>
+        <p class="lead">Vul de gegevens in om een nieuwe afspraak te maken.</p>
+    </div>
+        <a class="btn btn-primary m-5 float-right" asp-controller="Patient" asp-action="Index">Terug</a>
+        <br />
+    <div class="container">
+        <form asp-action="Appointment" method="post">
+            <div class="form-group">
+                <label asp-for="PatientName" class="px-2">Naam patiënt:</label>
+                <input asp-for="PatientName" class="form-control" />
+                <span asp-validation-for="PatientName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TherapistName" class="px-2">Naam therapeut:</label>
+                <input asp-for="TherapistName" class="form-control" />
+                <span asp-validation-for="TherapistName" class="text-danger"></span>
+
+            </div>
+            <div class="form-group">
+                <label asp-for="AppointmentTime" class="px-2">Datum en tijd afspraak:</label>
+                <input asp-for="AppointmentTime" class="form-control" />
+                <span asp-validation-for="AppointmentTime" class="text-danger"></span>
+            </div>
+            <button type="submit" class="mb-5 btn btn-primary">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

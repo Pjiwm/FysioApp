@@ -24,6 +24,23 @@ namespace Portal.Controllers
             return View();
         }
 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Appointment(AddAppointmentViewModel appointment)
+        {
+            if (ModelState.IsValid)
+            {
+                return Redirect("/Patient");
+            }
+            return View();
+        }
+
+        [HttpGet]
+        public IActionResult Appointment()
+        {
+            return View();
+        }
+
         [HttpGet]
         public IActionResult PatientForm()
         {

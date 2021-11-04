@@ -70,7 +70,7 @@ namespace Portal.Controllers
                 List<Patient> patientResults = patientRepository.ReadAll().Where(p => p.EMail == registerModel.Email).ToList();
                 if (await userManager.FindByEmailAsync(registerModel.Email) != null)
                 {
-                    ModelState.AddModelError("Email", "Email address already connected to an account.");
+                    ModelState.AddModelError("Email", "Email is al gebonden aan een account.");
                 }
                 else
                 {

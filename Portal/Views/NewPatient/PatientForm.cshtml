@@ -12,44 +12,51 @@
 </head>
 <body>
     <div class="jumbotron dark-blue-background">
-        <h1 class="display-3">Patient Form</h1>
-        <p class="lead">Fill in the new patients details.</p>
+        <h1 class="display-3">Nieuwe Patiënt</h1>
+        <p class="lead">Vul de gegevens in om een nieuwe patiënt aan het systeem toe te voegen.</p>
     </div>
-
+    <a class="btn btn-primary m-5 float-right" asp-controller="Patient" asp-action="Index">Terug</a>
+    <br />
     <div class="container">
         <form asp-action="PatientForm" method="post">
-            <div class="text-center font-weight-bold lead" asp-validation-summary="All"></div>
             <div class="form-group">
-                <label asp-for="Name" class="px-2">Name:</label>
+                <label asp-for="Name" class="px-2">Naam:</label>
                 <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="EMail" class="px-2">Patient's email:</label>
+                <label asp-for="EMail" class="px-2">Patiënt's email:</label>
                 <input asp-for="EMail" class="form-control" />
+                <span asp-validation-for="EMail" class="text-danger"></span>
+
             </div>
             <div class="form-group">
-                <label asp-for="DateOfBirth" class="px-2">Patient's date of birth:</label>
+                <label asp-for="DateOfBirth" class="px-2">Patient's geboortedatum:</label>
                 <input asp-for="DateOfBirth" class="form-control" />
+                <span asp-validation-for="DateOfBirth" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Gender">Gender</label>
                 <select asp-for="Gender" class="form-control">
-                    <option value="">Choose an option</option>
-                    <option value="Male">Male</option>
-                    <option value="Female">Female</option>
+                    <option value="">Kies een optie</option>
+                    <option value="Male">Man</option>
+                    <option value="Female">Vrouw</option>
                 </select>
+                <span asp-validation-for="Gender" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="PhoneNumber" class="px-2">Patient's date of phone number:</label>
+                <label asp-for="PhoneNumber" class="px-2">Patient's telefoonnummer:</label>
                 <input asp-for="PhoneNumber" class="form-control" />
+                <span asp-validation-for="PhoneNumber" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Role">Role</label>
+                <label asp-for="Role">Rol</label>
                 <select asp-for="Role" class="form-control">
-                    <option value="">Choose an option</option>
+                    <option value="">Kies een optie</option>
                     <option value="Student">Student</option>
-                    <option value="Employee">Employee</option>
+                    <option value="Employee">Medewerker</option>
                 </select>
+                <span asp-validation-for="Role" class="text-danger"></span>
             </div>
             <button type="submit" class="mb-5 btn btn-primary">Submit</button>
         </form>
